@@ -2,129 +2,131 @@
 const products = [
     {
         id: 1,
-        name: "Nike Air Max 2025",
-        price: 199.99,
+        name: "Nike Air Max",
         brand: "Nike",
-        type: "Shoes",
-        image: "https://example.com/nike-airmax.jpg"
+        category: "shoes",
+        price: 129.99,
+        image: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1a4e9b2f-7ee8-45dc-8dd5-f7843a476303/air-max-270-mens-shoes-KkLcGR.png"
     },
     {
         id: 2,
-        name: "Adidas Ultraboost",
-        price: 179.99,
+        name: "Adidas Originals Hoodie",
         brand: "Adidas",
-        type: "Shoes",
-        image: "https://example.com/adidas-ultraboost.jpg"
+        category: "hoodies",
+        price: 89.99,
+        image: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/52c051bd78804be0a871ae9800ef4daa_9366/Trefoil_Hoodie_Black_DT7964_01_laydown.jpg"
     },
     {
         id: 3,
-        name: "Puma Essential Hoodie",
-        price: 69.99,
+        name: "Puma Essential Logo T-Shirt",
         brand: "Puma",
-        type: "Hoodie",
-        image: "https://example.com/puma-hoodie.jpg"
+        category: "shirts",
+        price: 24.99,
+        image: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1350,h_1350/global/848722/01/mod01/fnd/PNA/fmt/png"
     },
     {
         id: 4,
-        name: "Armani Exchange T-Shirt",
-        price: 49.99,
+        name: "Armani Exchange Slim Fit Pants",
         brand: "Armani",
-        type: "T-Shirt",
-        image: "https://example.com/armani-tshirt.jpg"
+        category: "pants",
+        price: 149.99,
+        image: "https://armani.scene7.com/is/image/armanioffs/8NZP10_Z8M9Z_1200_1?$prodList$"
     },
-    {
-        id: 5,
-        name: "Dolce & Gabbana Jeans",
-        price: 299.99,
-        brand: "Dolce & Gabbana",
-        type: "Pants",
-        image: "https://example.com/dg-jeans.jpg"
-    }
-    // Add more products as needed
+    // Add more products here...
 ];
 
 let cart = [];
+let currentCategory = 'all';
 
-// Initialize the website
+// Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts();
     setupEventListeners();
 });
 
-// Display products in the grid
-function displayProducts() {
-    const productsGrid = document.querySelector('.products-grid');
-    productsGrid.innerHTML = '';
+// Set up event listeners
+function setupEventListeners() {
+    // Category filter buttons
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            currentCategory = button.dataset.category;
+            displayProducts();
+        });
+    });
 
-    products.forEach(product => {
-        const productCard = `
-            <div class="product-card">
-                <img src="${product.image}" alt="${product.name}" class="product-image">
-                <div class="product-info">
-                    <h3 class="product-title">${product.name}</h3>
-                    <p class="product-brand">${product.brand}</p>
-                    <p class="product-price">$${product.price.toFixed(2)}</p>
-                    <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
-                </div>
-            </div>
-        `;
-        productsGrid.innerHTML += productCard;
+    // Checkout form submission
+    document.getElementById('checkout-form').addEventListener('submit', handleCheckout);
+
+    // Modal close button
+    document.querySelector('.modal .close').addEventListener('click', () => {
+        document.getElementById('checkout-modal').style.display = 'none';
     });
 }
 
-// Set up event listeners
-function setupEventListeners() {
-    // Add to cart buttons
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('add-to-cart')) {
-            const productId = parseInt(e.target.dataset.id);
-            addToCart(productId);
-        }
+// Display products based on current category
+function displayProducts() {
+    const productsGrid = document.getElementById('products-grid');
+    productsGrid.innerHTML = '';
+
+    const filteredProducts = currentCategory === 'all' 
+        ? products 
+        : products.filter(product => product.category === currentCategory);
+
+    filteredProducts.forEach(product => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">${product.name}</h3>
+                <p class="product-brand">${product.brand}</p>
+                <p class="product-price">$${product.price.toFixed(2)}</p>
+                <button class="add-to-cart" onclick="addToCart(${product.id})">
+                    Add to Cart
+                </button>
+            </div>
+        `;
+        productsGrid.appendChild(productCard);
     });
-
-    // Cart icon
-    document.querySelector('.cart-icon').addEventListener('click', showCart);
-
-    // Close modal buttons
-    document.querySelectorAll('.close').forEach(button => {
-        button.addEventListener('click', closeModals);
-    });
-
-    // Checkout button
-    document.getElementById('checkout-btn').addEventListener('click', showCheckout);
-
-    // Payment form
-    document.getElementById('payment-form').addEventListener('submit', handlePayment);
 }
 
 // Cart functions
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
-    const cartItem = cart.find(item => item.id === productId);
+    const existingItem = cart.find(item => item.id === productId);
 
-    if (cartItem) {
-        cartItem.quantity++;
+    if (existingItem) {
+        existingItem.quantity++;
     } else {
-        cart.push({
-            ...product,
-            quantity: 1
-        });
+        cart.push({ ...product, quantity: 1 });
     }
 
-    updateCartCount();
+    updateCartDisplay();
 }
 
-function updateCartCount() {
-    const cartCount = document.getElementById('cart-count');
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    cartCount.textContent = totalItems;
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCartDisplay();
 }
 
-function showCart() {
-    const cartModal = document.getElementById('cart-modal');
+function updateQuantity(productId, change) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        item.quantity = Math.max(0, item.quantity + change);
+        if (item.quantity === 0) {
+            removeFromCart(productId);
+        }
+    }
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
     const cartItems = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-
+    const cartCount = document.getElementById('cart-count');
+    const totalAmount = document.getElementById('total-amount');
+    
     cartItems.innerHTML = '';
     let total = 0;
 
@@ -135,45 +137,81 @@ function showCart() {
         cartItems.innerHTML += `
             <div class="cart-item">
                 <img src="${item.image}" alt="${item.name}">
-                <div class="cart-item-info">
+                <div class="cart-item-details">
                     <h4>${item.name}</h4>
                     <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
+                    <div class="quantity-controls">
+                        <button onclick="updateQuantity(${item.id}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateQuantity(${item.id}, 1)">+</button>
+                    </div>
                 </div>
-                <button class="remove-item" data-id="${item.id}">×</button>
+                <button onclick="removeFromCart(${item.id})" class="remove-item">&times;</button>
             </div>
         `;
     });
 
-    cartTotal.textContent = total.toFixed(2);
-    cartModal.style.display = 'block';
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    totalAmount.textContent = total.toFixed(2);
+    document.getElementById('checkout-amount').textContent = total.toFixed(2);
 }
 
-function closeModals() {
-    document.querySelectorAll('.modal').forEach(modal => {
-        modal.style.display = 'none';
-    });
+function toggleCart() {
+    document.getElementById('cart-sidebar').classList.toggle('active');
 }
 
-function showCheckout() {
-    document.getElementById('cart-modal').style.display = 'none';
+function checkout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
     document.getElementById('checkout-modal').style.display = 'block';
 }
 
-function handlePayment(e) {
+function handleCheckout(e) {
     e.preventDefault();
     
+    // Validate form fields
+    const cardNumber = document.getElementById('card-number').value;
+    const expiryDate = document.getElementById('expiry-date').value;
+    const cvv = document.getElementById('cvv').value;
+    const cardName = document.getElementById('card-name').value;
+
+    if (!cardNumber || !expiryDate || !cvv || !cardName) {
+        alert('Please fill in all payment details');
+        return;
+    }
+
     // Simulate payment processing
     setTimeout(() => {
         alert('Payment successful! Thank you for your purchase.');
         cart = [];
-        updateCartCount();
-        closeModals();
+        updateCartDisplay();
+        document.getElementById('checkout-modal').style.display = 'none';
+        document.getElementById('checkout-form').reset();
+        toggleCart();
     }, 1500);
 }
 
-// Close modals when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal')) {
-        closeModals();
-    }
+// Format card input
+document.getElementById('card-number').addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, '');
+    value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+    e.target.value = value;
 });
+
+document.getElementById('expiry-date').addEventListener('input', (e) => {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length >= 2) {
+        value = value.substring(0, 2) + '/' + value.substring(2);
+    }
+    e.target.value = value;
+});
+
+// Close modal when clicking outside
+window.onclick = (event) => {
+    const modal = document.getElementById('checkout-modal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+};
