@@ -6,7 +6,7 @@ const products = [
         brand: "Nike",
         category: "shoes",
         price: 129.99,
-        image: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1a4e9b2f-7ee8-45dc-8dd5-f7843a476303/air-max-270-mens-shoes-KkLcGR.png"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdB16zRpGThZ-6dZecROqKSlpXTlt-mj-MCg&s"
     },
     {
         id: 2,
@@ -14,7 +14,7 @@ const products = [
         brand: "Adidas",
         category: "hoodies",
         price: 89.99,
-        image: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/52c051bd78804be0a871ae9800ef4daa_9366/Trefoil_Hoodie_Black_DT7964_01_laydown.jpg"
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzIr4VhfLRJDwOWPTjHG0-dr3vqW6MiNATDQ&s"
     },
     {
         id: 3,
@@ -22,7 +22,7 @@ const products = [
         brand: "Puma",
         category: "shirts",
         price: 24.99,
-        image: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_1350,h_1350/global/848722/01/mod01/fnd/PNA/fmt/png"
+        image: "https://photos6.spartoo.eu/photos/198/19814213/Puma-ESSENTIAL-LOGO-TEE-19814213_1200_A.jpg"
     },
     {
         id: 4,
@@ -30,7 +30,7 @@ const products = [
         brand: "Armani",
         category: "pants",
         price: 149.99,
-        image: "https://armani.scene7.com/is/image/armanioffs/8NZP10_Z8M9Z_1200_1?$prodList$"
+        image: "https://dimg.dillards.com/is/image/DillardsZoom/mainProduct/armani-exchange-slim-fit-stretch-pants/00000000_zi_1224348a-8a45-4bc4-ad88-5cb36a121afd.jpg"
     },
     // Add more products here...
 ];
