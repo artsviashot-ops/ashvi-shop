@@ -2,164 +2,154 @@
 const products = [
     {
         id: 1,
-        name: "Nike Air Max",
-        brand: "Nike",
-        category: "shoes",
-        price: 129.99,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdB16zRpGThZ-6dZecROqKSlpXTlt-mj-MCg&s"
+        brand: 'Nike',
+        name: 'Air Max 270',
+        price: 149.99,
+        category: 'shoes',
+        image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/skwgyqrbfzhu6uyeh0gg/air-max-270-shoes-2V5C4p.png'
     },
     {
         id: 2,
-        name: "Adidas Originals Hoodie",
-        brand: "Adidas",
-        category: "hoodies",
-        price: 89.99,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzIr4VhfLRJDwOWPTjHG0-dr3vqW6MiNATDQ&s"
+        brand: 'Adidas',
+        name: 'Trefoil Hoodie',
+        price: 64.99,
+        category: 'hoodies',
+        image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/52c5def2c9cd4c7fba42ae9800c4186e_9366/Trefoil_Hoodie_Black_DT7964_01_laydown.jpg'
     },
     {
         id: 3,
-        name: "Puma Essential Logo T-Shirt",
-        brand: "Puma",
-        category: "shirts",
+        brand: 'Puma',
+        name: 'Essential Logo Tee',
         price: 24.99,
-        image: "https://photos6.spartoo.eu/photos/198/19814213/Puma-ESSENTIAL-LOGO-TEE-19814213_1200_A.jpg"
+        category: 'shirts',
+        image: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/586668/01/mod01/fnd/PNA/fmt/png'
     },
     {
         id: 4,
-        name: "Armani Exchange Slim Fit Pants",
-        brand: "Armani",
-        category: "pants",
-        price: 149.99,
-        image: "https://dimg.dillards.com/is/image/DillardsZoom/mainProduct/armani-exchange-slim-fit-stretch-pants/00000000_zi_1224348a-8a45-4bc4-ad88-5cb36a121afd.jpg"
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://armani.scene7.com/is/image/armani/3K1J751D4DZ10941_F_1?wid=1080'
     },
-    // Add more products here...
+    // Add more products here to reach 50+ items
 ];
 
 let cart = [];
-let currentCategory = 'all';
+let currentFilter = 'all';
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts();
-    setupEventListeners();
+    updateCartCount();
 });
 
-// Set up event listeners
-function setupEventListeners() {
-    // Category filter buttons
-    document.querySelectorAll('.filter-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            currentCategory = button.dataset.category;
-            displayProducts();
-        });
-    });
+// Display products based on filter
+function displayProducts() {
+    const container = document.getElementById('products-container');
+    container.innerHTML = '';
 
-    // Checkout form submission
-    document.getElementById('checkout-form').addEventListener('submit', handleCheckout);
+    const filteredProducts = currentFilter === 'all' 
+        ? products 
+        : products.filter(product => product.category === currentFilter);
 
-    // Modal close button
-    document.querySelector('.modal .close').addEventListener('click', () => {
-        document.getElementById('checkout-modal').style.display = 'none';
+    filteredProducts.forEach(product => {
+        const productCard = `
+            <div class="product-card">
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <div class="product-info">
+                    <div class="product-brand">${product.brand}</div>
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-price">$${product.price.toFixed(2)}</div>
+                    <button class="add-to-cart" onclick="addToCart(${product.id})">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        `;
+        container.innerHTML += productCard;
     });
 }
 
-// Display products based on current category
-function displayProducts() {
-    const productsGrid = document.getElementById('products-grid');
-    productsGrid.innerHTML = '';
-
-    const filteredProducts = currentCategory === 'all' 
-        ? products 
-        : products.filter(product => product.category === currentCategory);
-
-    filteredProducts.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.className = 'product-card';
-        productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" class="product-image">
-            <div class="product-info">
-                <h3 class="product-title">${product.name}</h3>
-                <p class="product-brand">${product.brand}</p>
-                <p class="product-price">$${product.price.toFixed(2)}</p>
-                <button class="add-to-cart" onclick="addToCart(${product.id})">
-                    Add to Cart
-                </button>
-            </div>
-        `;
-        productsGrid.appendChild(productCard);
+// Filter products by category
+function filterProducts(category) {
+    currentFilter = category;
+    displayProducts();
+    
+    // Update active button
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
     });
+    event.target.classList.add('active');
 }
 
 // Cart functions
+function toggleCart() {
+    document.getElementById('cart-sidebar').classList.toggle('active');
+}
+
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     const existingItem = cart.find(item => item.id === productId);
 
     if (existingItem) {
-        existingItem.quantity++;
+        existingItem.quantity += 1;
     } else {
-        cart.push({ ...product, quantity: 1 });
+        cart.push({
+            ...product,
+            quantity: 1
+        });
     }
 
-    updateCartDisplay();
+    updateCart();
+    updateCartCount();
+
+    // Show confirmation animation
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = 'Added to cart!';
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 2000);
 }
 
 function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
-    updateCartDisplay();
+    updateCart();
+    updateCartCount();
 }
 
-function updateQuantity(productId, change) {
-    const item = cart.find(item => item.id === productId);
-    if (item) {
-        item.quantity = Math.max(0, item.quantity + change);
-        if (item.quantity === 0) {
-            removeFromCart(productId);
-        }
-    }
-    updateCartDisplay();
+function updateCartCount() {
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cart-count').textContent = count;
 }
 
-function updateCartDisplay() {
+function updateCart() {
     const cartItems = document.getElementById('cart-items');
-    const cartCount = document.getElementById('cart-count');
-    const totalAmount = document.getElementById('total-amount');
-    
     cartItems.innerHTML = '';
-    let total = 0;
 
     cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        total += itemTotal;
-
-        cartItems.innerHTML += `
+        const cartItem = `
             <div class="cart-item">
                 <img src="${item.image}" alt="${item.name}">
-                <div class="cart-item-details">
-                    <h4>${item.name}</h4>
-                    <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
-                    <div class="quantity-controls">
-                        <button onclick="updateQuantity(${item.id}, -1)">-</button>
-                        <span>${item.quantity}</span>
-                        <button onclick="updateQuantity(${item.id}, 1)">+</button>
-                    </div>
+                <div class="cart-item-info">
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+                    <div>Quantity: ${item.quantity}</div>
                 </div>
-                <button onclick="removeFromCart(${item.id})" class="remove-item">&times;</button>
+                <button class="remove-item" onclick="removeFromCart(${item.id})">
+                    <i class="fas fa-trash"></i>
+                </button>
             </div>
         `;
+        cartItems.innerHTML += cartItem;
     });
 
-    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
-    totalAmount.textContent = total.toFixed(2);
-    document.getElementById('checkout-amount').textContent = total.toFixed(2);
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+    document.getElementById('payment-amount').textContent = total.toFixed(2);
 }
 
-function toggleCart() {
-    document.getElementById('cart-sidebar').classList.toggle('active');
-}
-
+// Checkout functions
 function checkout() {
     if (cart.length === 0) {
         alert('Your cart is empty!');
@@ -168,50 +158,41 @@ function checkout() {
     document.getElementById('checkout-modal').style.display = 'block';
 }
 
-function handleCheckout(e) {
-    e.preventDefault();
-    
-    // Validate form fields
-    const cardNumber = document.getElementById('card-number').value;
-    const expiryDate = document.getElementById('expiry-date').value;
-    const cvv = document.getElementById('cvv').value;
-    const cardName = document.getElementById('card-name').value;
-
-    if (!cardNumber || !expiryDate || !cvv || !cardName) {
-        alert('Please fill in all payment details');
-        return;
-    }
-
-    // Simulate payment processing
-    setTimeout(() => {
-        alert('Payment successful! Thank you for your purchase.');
-        cart = [];
-        updateCartDisplay();
-        document.getElementById('checkout-modal').style.display = 'none';
-        document.getElementById('checkout-form').reset();
-        toggleCart();
-    }, 1500);
+function closeCheckoutModal() {
+    document.getElementById('checkout-modal').style.display = 'none';
 }
 
-// Format card input
-document.getElementById('card-number').addEventListener('input', (e) => {
-    let value = e.target.value.replace(/\D/g, '');
-    value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
-    e.target.value = value;
-});
+function processPayment(event) {
+    event.preventDefault();
+    
+    // Simulate payment processing
+    document.getElementById('checkout-modal').style.display = 'none';
+    document.getElementById('order-number').textContent = generateOrderNumber();
+    document.getElementById('success-modal').style.display = 'block';
+    
+    // Clear cart
+    cart = [];
+    updateCart();
+    updateCartCount();
+}
 
-document.getElementById('expiry-date').addEventListener('input', (e) => {
-    let value = e.target.value.replace(/\D/g, '');
-    if (value.length >= 2) {
-        value = value.substring(0, 2) + '/' + value.substring(2);
-    }
-    e.target.value = value;
-});
+function closeSuccessModal() {
+    document.getElementById('success-modal').style.display = 'none';
+    toggleCart(); // Close cart sidebar
+}
 
-// Close modal when clicking outside
-window.onclick = (event) => {
-    const modal = document.getElementById('checkout-modal');
-    if (event.target === modal) {
-        modal.style.display = 'none';
+function generateOrderNumber() {
+    return 'ORD-' + Date.now().toString().slice(-8);
+}
+
+// Close modals when clicking outside
+window.onclick = function(event) {
+    const checkoutModal = document.getElementById('checkout-modal');
+    const successModal = document.getElementById('success-modal');
+    if (event.target === checkoutModal) {
+        checkoutModal.style.display = 'none';
     }
-};
+    if (event.target === successModal) {
+        successModal.style.display = 'none';
+    }
+}
