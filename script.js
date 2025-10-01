@@ -50,6 +50,22 @@ const products = [
     },
     {
         id: 7,
+        brand: 'Nike',
+        name: 'V5 RNR',
+        price: 60.99,
+        category: 'shoes',
+        image: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6fe52371-d9f6-45a6-8b86-d95ba3fbf86e/NIKE+V5+RNR+E+%28PS%29.png'
+    },
+    {
+        id: 8,
+        brand: 'Christian',
+        name: 'Louboutin LOUIS JUNIOR',
+        price: 99.99,
+        category: 'shoes',
+        image: 'https://image-raw.reversible.com/raw_images/a982a17174279b1ccd9233f465ec1f6d1cb2b1fd773c3b74b54608539ae768ec'
+    },
+    {
+        id: 9,
         brand: 'Armani',
         name: 'Designer Jeans',
         price: 199.99,
@@ -57,23 +73,7 @@ const products = [
         image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
     },
     {
-        id: 4,
-        brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
-        category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
-    },
-    {
-        id: 4,
-        brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
-        category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
-    },
-    {
-        id: 4,
+        id: 10,
         brand: 'Armani',
         name: 'Designer Jeans',
         price: 199.99,
