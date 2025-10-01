@@ -83,8 +83,8 @@ const products = [
     {
         id: 11,
         brand: 'Zara',
-        name: 'Designer Jeans',
-        price: 199.99,
+        name: 'Man Hoodi',
+        price: 58.99,
         category: 'pants',
         image: 'https://5.imimg.com/data5/SELLER/Default/2024/2/389108243/VO/CA/YP/156224526/zara-man-hoodies-500x500.png'
     },
