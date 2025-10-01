@@ -1,113 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashvi - Shop Smart, Shop Fast</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Shop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Ashvi</h1>
-                <p class="slogan">Shop Smart, Shop Fast</p>
-            </div>
-            <div class="nav-links">
-                <a href="#" class="active">Home</a>
-                <a href="#products">Products</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="cart-icon" onclick="toggleCart()">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <h1>Mini Shop</h1>
+    <nav>
+      <button class="category-btn active" data-category="all">All</button>
+      <button class="category-btn" data-category="shoes">Shoes</button>
+      <button class="category-btn" data-category="hoodies">Hoodies</button>
+      <button class="category-btn" data-category="shirts">Shirts</button>
+      <button class="category-btn" data-category="pants">Pants</button>
+    </nav>
+    <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+  </header>
 
-    <main>
-        <section class="hero">
-            <h2>Welcome to Ashvi</h2>
-            <p>Discover the latest fashion trends from top brands</p>
-        </section>
+  <main>
+    <div id="products-container" class="products-grid"></div>
+  </main>
 
-        <section class="categories">
-            <h2>Categories</h2>
-            <div class="category-filters">
-                <button class="category-btn active" onclick="filterProducts('all')">All</button>
-                <button class="category-btn" onclick="filterProducts('shirts')">Shirts</button>
-                <button class="category-btn" onclick="filterProducts('pants')">Pants</button>
-                <button class="category-btn" onclick="filterProducts('hoodies')">Hoodies</button>
-                <button class="category-btn" onclick="filterProducts('shoes')">Shoes</button>
-            </div>
-        </section>
-
-        <section class="products" id="products">
-            <div class="products-grid" id="products-container">
-                <!-- Products will be loaded here dynamically -->
-            </div>
-        </section>
-    </main>
-
-    <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h2>Shopping Cart</h2>
-            <button onclick="toggleCart()" class="close-cart">&times;</button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <!-- Cart items will be added here -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span id="cart-total">$0.00</span>
-            </div>
-            <button onclick="checkout()" class="checkout-btn">Proceed to Checkout</button>
-        </div>
+  <aside id="cart-sidebar">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div class="cart-total">
+      Total: $<span id="cart-total">0.00</span>
     </div>
+    <button onclick="checkout()">Checkout</button>
+  </aside>
 
-    <div class="modal" id="checkout-modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeCheckoutModal()">&times;</span>
-            <h2>Checkout</h2>
-            <form id="payment-form" onsubmit="processPayment(event)">
-                <div class="form-group">
-                    <label>Card Number</label>
-                    <input type="text" placeholder="1234 5678 9012 3456" maxlength="19" required>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Expiry Date</label>
-                        <input type="text" placeholder="MM/YY" maxlength="5" required>
-                    </div>
-                    <div class="form-group">
-                        <label>CVV</label>
-                        <input type="text" placeholder="123" maxlength="3" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Name on Card</label>
-                    <input type="text" placeholder="John Doe" required>
-                </div>
-                <button type="submit" class="payment-btn">Pay $<span id="payment-amount">0.00</span></button>
-            </form>
-        </div>
-    </div>
-
-    <div class="success-modal" id="success-modal">
-        <div class="success-content">
-            <div class="success-icon">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h2>Payment Successful!</h2>
-            <p>Thank you for shopping with Ashvi</p>
-            <p>Order #: <span id="order-number"></span></p>
-            <button onclick="closeSuccessModal()" class="continue-shopping">Continue Shopping</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
