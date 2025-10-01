@@ -1,5 +1,6 @@
 // Product data
 const products = [
+    // Shoes
     {
         id: 1,
         brand: 'Nike',
@@ -11,13 +12,97 @@ const products = [
     {
         id: 2,
         brand: 'Adidas',
-        name: 'Trefoil Hoodie',
-        price: 64.99,
-        category: 'hoodies',
-        image: 'https://static.ftshp.digital/img/p/9/7/5/8/4/4/975844-full_product.jpg'
+        name: 'Campus 00s',
+        price: 89.99,
+        category: 'shoes',
+        image: 'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/35ee2767ce8c47418ffdb8fec30dbefe_9366/Campus_00s_Shoes_White_JQ7784_01_00_standard.jpg'
     },
     {
         id: 3,
+        brand: 'Puma',
+        name: 'Suede Classic XXI',
+        price: 65.00,
+        category: 'shoes',
+        image: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/365741/01/mod01/fnd/PNA/fmt/png'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'shoes',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 5,
+        brand: 'Nike',
+        name: 'P-6000',
+        price: 85.99,
+        category: 'shoes',
+        image: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/932513c6-894d-4387-a57f-66cf55fce152/NIKE+P-6000+%28GS%29.png'
+    },
+
+    // Hoodies
+    {
+        id: 6,
+        brand: 'Adidas',
+        name: 'Trefoil Hoodie',
+        price: 64.99,
+        category: 'hoodies',
+        image: 'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/35ee2767ce8c47418ffdb8fec30dbefe_9366/Campus_00s_Shoes_White_JQ7784_01_00_standard.jpg'
+    },
+    {
+        id: 7,
+        brand: 'Champion',
+        name: 'S700 EcoSmart Pullover',
+        price: 49.99,
+        category: 'hoodies',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 8,
+        brand: 'Louis Vuitton',
+        name: 'Supreme Box Logo Hoodie',
+        price: 5245.99,
+        category: 'hoodies',
+        image: 'https://the-collectory.com/cdn/shop/products/supreme-x-louis-vuitton-collaboration_800x.jpg?v=1527265533'
+    },
+    {
+        id: 9,
+        brand: 'Zara',
+        name: 'Man Hoodie',
+        price: 58.99,
+        category: 'hoodies',
+        image: 'https://5.imimg.com/data5/SELLER/Default/2024/2/389108243/VO/CA/YP/156224526/zara-man-hoodies-500x500.png'
+    },
+    {
+        id: 10,
+        brand: 'Armani',
+        name: 'Man Hoodie',
+        price: 58.99,
+        category: 'hoodies',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+
+    // Shirts
+    {
+        id: 11,
+        brand: 'Nike',
+        name: 'Dri-FIT Legend Tee',
+        price: 25.00,
+        category: 'shirts',
+        image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/7b3e9b6b-0b3e-4b8e-9c8b-5f6c9c1a2b4a/dri-fit-legend-mens-training-t-shirt-9V6h8M.png'
+    },
+    {
+        id: 12,
+        brand: 'Adidas',
+        name: 'Climacool 3-Stripes Tee',
+        price: 29.99,
+        category: 'shirts',
+        image: 'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/35ee2767ce8c47418ffdb8fec30dbefe_9366/Campus_00s_Shoes_White_JQ7784_01_00_standard.jpg'
+    },
+    {
+        id: 13,
         brand: 'Puma',
         name: 'Essential Logo Tee',
         price: 24.99,
@@ -25,110 +110,63 @@ const products = [
         image: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/586668/01/mod01/fnd/PNA/fmt/png'
     },
     {
-        id: 4,
+        id: 14,
         brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
-        category: 'pants',
+        name: 'Slim Fit Polo',
+        price: 89.99,
+        category: 'shirts',
         image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
     },
     {
-        id: 5,
+        id: 15,
+        brand: 'Zara',
+        name: 'Man Shirt',
+        price: 49.99,
+        category: 'shirts',
+        image: 'https://5.imimg.com/data5/SELLER/Default/2024/2/389108243/VO/CA/YP/156224526/zara-man-hoodies-500x500.png'
+    },
+
+    // Pants
+    {
+        id: 16,
+        brand: 'Nike',
+        name: 'Tech Fleece Joggers',
+        price: 79.99,
+        category: 'pants',
+        image: 'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/5b9e5e6f-3f8b-4b7f-9f6e-9e6d7a8a4a8e/tech-fleece-mens-joggers-5GJ9wL.png'
+    },
+    {
+        id: 17,
         brand: 'Adidas',
-        name: 'Campus',
-        price: 76.99,
-        category: 'shoes',
+        name: 'Tiro 21 Training Pants',
+        price: 54.99,
+        category: 'pants',
         image: 'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/35ee2767ce8c47418ffdb8fec30dbefe_9366/Campus_00s_Shoes_White_JQ7784_01_00_standard.jpg'
     },
     {
-        id: 6,
-        brand: 'Nike',
-        name: 'P-6000',
-        price: 85.99,
-        category: 'shoes',
-        image: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/932513c6-894d-4387-a57f-66cf55fce152/NIKE+P-6000+%28GS%29.png'
+        id: 18,
+        brand: 'Puma',
+        name: 'Essentials Sweatpants',
+        price: 39.99,
+        category: 'pants',
+        image: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/586668/01/mod01/fnd/PNA/fmt/png'
     },
     {
-        id: 7,
-        brand: 'Nike',
-        name: 'V5 RNR',
-        price: 60.99,
-        category: 'shoes',
-        image: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6fe52371-d9f6-45a6-8b86-d95ba3fbf86e/NIKE+V5+RNR+E+%28PS%29.png'
-    },
-    {
-        id: 8,
-        brand: 'Christian',
-        name: 'Louboutin LOUIS JUNIOR',
+        id: 19,
+        brand: 'Armani',
+        name: 'Slim Fit Chinos',
         price: 99.99,
-        category: 'shoes',
-        image: 'https://image-raw.reversible.com/raw_images/a982a17174279b1ccd9233f465ec1f6d1cb2b1fd773c3b74b54608539ae768ec'
-    },
-    {
-        id: 9,
-        brand: 'Champion',
-        name: 'S700 Men's 50/50 EcoSmart Pullover Hood',
-        price: 49.99,
-        category: 'hoodies',
+        category: 'pants',
         image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
     },
     {
-        id: 10,
-        brand: 'Louis Vuitton',
-        name: 'Supreme Logo Box Hoodie Monogram– TC',
-        price: 5245.99,
-        category: 'hoodie',
-        image: 'https://the-collectory.com/cdn/shop/products/supreme-x-louis-vuitton-collaboration_800x.jpg?v=1527265533'
-    },
-    {
-        id: 11,
+        id: 20,
         brand: 'Zara',
-        name: 'Man Hoodi',
-        price: 58.99,
+        name: 'Man Pants',
+        price: 59.99,
         category: 'pants',
         image: 'https://5.imimg.com/data5/SELLER/Default/2024/2/389108243/VO/CA/YP/156224526/zara-man-hoodies-500x500.png'
-    },
-    {
-        id: 12,
-        brand: 'Armani',
-        name: 'Man Hoodie',
-        price: 58.99,
-        category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
-    },
-    {
-        id: 4,
-        brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
-        category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
-    },
-    {
-        id: 4,
-        brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
-        category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
-    },
-    {
-        id: 4,
-        brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
-        category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
-    },
-    {
-        id: 4,
-        brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
-        category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
-    },
-    // Add more products here to reach 50+ items
+    }
 ];
 
 let cart = [];
@@ -186,109 +224,6 @@ function toggleCart() {
 
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
-    const existingItem = cart.find(item => item.id === productId);
-
-    if (existingItem) {
-        existingItem.quantity += 1;
-    } else {
-        cart.push({
-            ...product,
-            quantity: 1
-        });
-    }
-
-    updateCart();
-    updateCartCount();
-
-    // Show confirmation animation
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = 'Added to cart!';
-    document.body.appendChild(notification);
-    setTimeout(() => notification.remove(), 2000);
-}
-
-function removeFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId);
-    updateCart();
-    updateCartCount();
-}
-
-function updateCartCount() {
-    const count = cart.reduce((total, item) => total + item.quantity, 0);
-    document.getElementById('cart-count').textContent = count;
-}
-
-function updateCart() {
-    const cartItems = document.getElementById('cart-items');
-    cartItems.innerHTML = '';
-
-    cart.forEach(item => {
-        const cartItem = `
-            <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}">
-                <div class="cart-item-info">
-                    <div class="cart-item-name">${item.name}</div>
-                    <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
-                    <div>Quantity: ${item.quantity}</div>
-                </div>
-                <button class="remove-item" onclick="removeFromCart(${item.id})">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
-        `;
-        cartItems.innerHTML += cartItem;
-    });
-
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
-    document.getElementById('payment-amount').textContent = total.toFixed(2);
-}
-
-// Checkout functions
-function checkout() {
-    if (cart.length === 0) {
-        alert('Your cart is empty!');
-        return;
-    }
-    document.getElementById('checkout-modal').style.display = 'block';
-}
-
-function closeCheckoutModal() {
-    document.getElementById('checkout-modal').style.display = 'none';
-}
-
-function processPayment(event) {
-    event.preventDefault();
-    
-    // Simulate payment processing
-    document.getElementById('checkout-modal').style.display = 'none';
-    document.getElementById('order-number').textContent = generateOrderNumber();
-    document.getElementById('success-modal').style.display = 'block';
-    
-    // Clear cart
-    cart = [];
-    updateCart();
-    updateCartCount();
-}
-
-function closeSuccessModal() {
-    document.getElementById('success-modal').style.display = 'none';
-    toggleCart(); // Close cart sidebar
-}
-
-function generateOrderNumber() {
-    return 'ORD-' + Date.now().toString().slice(-8);
-}
-
-// Close modals when clicking outside
-window.onclick = function(event) {
-    const checkoutModal = document.getElementById('checkout-modal');
-    const successModal = document.getElementById('success-modal');
-    if (event.target === checkoutModal) {
-        checkoutModal.style.display = 'none';
-    }
-    if (event.target === successModal) {
-        successModal.style.display = 'none';
-    }
-}
+    const existingItem = cart
+::contentReference[oaicite:0]{index=0}
+ 
