@@ -32,6 +32,102 @@ const products = [
         category: 'pants',
         image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
     },
+    {
+        id: 5,
+        brand: 'Adidas',
+        name: 'Campus',
+        price: 76.99,
+        category: 'shoess',
+        image: 'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/35ee2767ce8c47418ffdb8fec30dbefe_9366/Campus_00s_Shoes_White_JQ7784_01_00_standard.jpg'
+    },
+    {
+        id: 6,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 7,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
+    {
+        id: 4,
+        brand: 'Armani',
+        name: 'Designer Jeans',
+        price: 199.99,
+        category: 'pants',
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+    },
     // Add more products here to reach 50+ items
 ];
 
