@@ -37,16 +37,16 @@ const products = [
         brand: 'Adidas',
         name: 'Campus',
         price: 76.99,
-        category: 'shoess',
+        category: 'shoes',
         image: 'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/35ee2767ce8c47418ffdb8fec30dbefe_9366/Campus_00s_Shoes_White_JQ7784_01_00_standard.jpg'
     },
     {
         id: 6,
-        brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
+        brand: 'Nike',
+        name: 'P-6000',
+        price: 85.99,
         category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+        image: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/932513c6-894d-4387-a57f-66cf55fce152/NIKE+P-6000+%28GS%29.png'
     },
     {
         id: 7,
