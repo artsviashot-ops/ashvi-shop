@@ -14,7 +14,7 @@ const products = [
         name: 'Trefoil Hoodie',
         price: 64.99,
         category: 'hoodies',
-        image: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/52c5def2c9cd4c7fba42ae9800c4186e_9366/Trefoil_Hoodie_Black_DT7964_01_laydown.jpg'
+        image: 'https://static.ftshp.digital/img/p/9/7/5/8/4/4/975844-full_product.jpg'
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const products = [
         name: 'Designer Jeans',
         price: 199.99,
         category: 'pants',
-        image: 'https://armani.scene7.com/is/image/armani/3K1J751D4DZ10941_F_1?wid=1080'
+        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
     },
     // Add more products here to reach 50+ items
 ];
