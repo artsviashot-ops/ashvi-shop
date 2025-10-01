@@ -66,33 +66,33 @@ const products = [
     },
     {
         id: 9,
-        brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
-        category: 'pants',
+        brand: 'Champion',
+        name: 'S700 Men's 50/50 EcoSmart Pullover Hood',
+        price: 49.99,
+        category: 'hoodies',
         image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
     },
     {
         id: 10,
-        brand: 'Armani',
+        brand: 'Louis Vuitton',
+        name: 'Supreme Logo Box Hoodie Monogram– TC',
+        price: 5245.99,
+        category: 'hoodie',
+        image: 'https://the-collectory.com/cdn/shop/products/supreme-x-louis-vuitton-collaboration_800x.jpg?v=1527265533'
+    },
+    {
+        id: 11,
+        brand: 'Zara',
         name: 'Designer Jeans',
         price: 199.99,
         category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
+        image: 'https://5.imimg.com/data5/SELLER/Default/2024/2/389108243/VO/CA/YP/156224526/zara-man-hoodies-500x500.png'
     },
     {
-        id: 4,
+        id: 12,
         brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
-        category: 'pants',
-        image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
-    },
-    {
-        id: 4,
-        brand: 'Armani',
-        name: 'Designer Jeans',
-        price: 199.99,
+        name: 'Man Hoodie',
+        price: 58.99,
         category: 'pants',
         image: 'https://imagescdn.simons.ca/images/9185-1343106-1-A1_3/slim-fit-faded-black-jean.jpg?__=3'
     },
