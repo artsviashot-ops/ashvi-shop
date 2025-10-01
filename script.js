@@ -12,7 +12,7 @@ const products = [
   {id:7, brand:'Champion', name:'Eco Pullover', price:49.99, category:'hoodies', image:'https://i.ebayimg.com/images/g/uy8AAOSwgdRk0l0E/s-l1200.jpg'},
   {id:8, brand:'Zara', name:'Casual Hoodie', price:58.99, category:'hoodies', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT-M71savV5wGa3dESDotmMlQNoPMQC_3gtA&s'},
   {id:9, brand:'Nike', name:'Tech Fleece Hoodie', price:89.99, category:'hoodies', image:'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/5a03f66d-7f9d-45bb-a136-a5d839a950c9/M+NK+TCH+FLC+FZ+WR+HOODIE.png'},
-  {id:10, brand:'Puma', name:'Essential Hoodie', price:44.99, category:'hoodies', image:'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/586690/01/mod01/fnd/PNA/fmt/png/Essentials-Small-Logo-Men's-Hoodie'},
+  {id:10, brand:'Puma', name:'Essential Hoodie', price:44.99, category:'hoodies', image:'https://resources.mandmdirect.com/Images/_default/p/u/6/pu6604_1_cloudzoom.jpg'},
   {id:11, brand:'Nike', name:'Dri-FIT Tee', price:25, category:'shirts', image:'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/aade315f-2e63-4482-b781-5c2de36af69f/AS+M+NK+DF+TEE+RLGD+RESET.png'},
   {id:12, brand:'Adidas', name:'3-Stripes Tee', price:29.99, category:'shirts', image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtaasG3d5fibR9b7NhQ7mrH5E_f16MQjGldA&s'},
   {id:13, brand:'Puma', name:'Logo Tee', price:24.99, category:'shirts', image:'https://images.puma.com/image/upload/f_auto,q_auto/global/586670/01/fnd/PNA/fmt/png'},
