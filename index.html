@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini Shop</title>
+  <title>Ashvi Shop</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Mini Shop</h1>
+    <h1>Ashvi</h1>
     <nav>
       <button class="category-btn active" data-category="all">All</button>
       <button class="category-btn" data-category="shoes">Shoes</button>
@@ -23,14 +23,28 @@
     <div id="products-container" class="products-grid"></div>
   </main>
 
+  <!-- Cart Sidebar -->
   <aside id="cart-sidebar">
-    <h2>Your Cart</h2>
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart" onclick="toggleCart()">✖</button>
+    </div>
     <div id="cart-items"></div>
     <div class="cart-total">
       Total: $<span id="cart-total">0.00</span>
     </div>
-    <button onclick="checkout()">Checkout</button>
+    <button class="checkout-btn" onclick="checkout()">Checkout</button>
   </aside>
+
+  <!-- Payment Success Modal -->
+  <div id="success-modal" class="modal">
+    <div class="modal-content">
+      <div class="success-icon">✔️</div>
+      <h2>Payment Successful!</h2>
+      <p>Thank you for your purchase.</p>
+      <button onclick="closeSuccessModal()">Close</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
