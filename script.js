@@ -18,11 +18,11 @@ const products = [
   {id:13, brand:'Puma', name:'Logo Tee', price:24.99, category:'shirts', image:'https://images.puma.com/image/upload/f_auto,q_auto/global/586670/01/fnd/PNA/fmt/png'},
   {id:14, brand:'Zara', name:'Casual Shirt', price:39.99, category:'shirts', image:'https://static.zara.net/assets/public/2e32/68f1/c96f451eb075/cbe4b5ba5541/06987308400-a1/06987308400-a1.jpg?ts=1758555657728&w=352&f=auto'},
   {id:15, brand:'Armani', name:'Slim Fit Polo', price:89.99, category:'shirts', image:'https://imagena1.lacoste.com/dw/image/v2/AAUP_PRD/on/demandware.static/-/Sites-master/default/dw1e7c8b8f/PH4012_001_33.jpg'},
-  {id:16, brand:'Nike', name:'Tech Joggers', price:79.99, category:'pants', image:'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/5b9e5e6f-3f8b-4b7f-9f6e-9e6d7a8a4a8e/tech-fleece-mens-joggers-5GJ9wL.png'},
-  {id:17, brand:'Adidas', name:'Tiro 21 Pants', price:54.99, category:'pants', image:'https://assets.adidas.com/images/w_600,f_auto,q_auto/6b8a7cbb3e39462f8051ad3e00b25f15_9366/Tiro_21_Training_Pants_Black_GM7339_21_model.jpg'},
+  {id:16, brand:'Nike', name:'Tech Joggers', price:79.99, category:'pants', image:'https://m.media-amazon.com/images/I/518LOi515RL._UY1000_.jpg'},
+  {id:17, brand:'Adidas', name:'Tiro 21 Pants', price:54.99, category:'pants', image:'https://i.ebayimg.com/images/g/9MoAAOSwiFJjxpSW/s-l1200.jpg'},
   {id:18, brand:'Puma', name:'Classic T-Shirt', price:39.99, category:'shirts', image:'https://images.puma.com/image/upload/f_auto,q_auto/global/586726/01/fnd/PNA/fmt/png'},
-  {id:19, brand:'Zara', name:'Slim Fit Pants', price:59.99, category:'pants', image:'https://static.zara.net/photos///2023/I/0/2/p/5561/336/710/2/w/563/5561336710_6_1_1.jpg'},
-  {id:20, brand:'Levi’s', name:'501 Jeans', price:69.99, category:'pants', image:'https://lsco.scene7.com/is/image/lsco/005010114-front-pdp?$qv_desktop_full$'}
+  {id:19, brand:'Zara', name:'Slim Fit Pants', price:59.99, category:'pants', image:'https://static.zara.net/assets/public/4619/aebc/4cfd4d43b103/baa249f7f934/06861441802-a1/06861441802-a1.jpg?ts=1727349036352'},
+  {id:20, brand:'Levi’s', name:'501 Jeans', price:69.99, category:'pants', image:'https://lsco.scene7.com/is/image/lsco/005010193-alt2-pdp-differentiation?fmt=jpeg&qlt=70&resMode=sharp2&fit=crop,1&op_usm=0.6,0.6,8&wid=2000&hei=2500'}
 ];
 
 // Initialize
