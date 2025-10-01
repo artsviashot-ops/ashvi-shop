@@ -1,30 +1,23 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* Body */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
 
-/* Header */
+/* HEADER */
 header {
   background-color: #222;
   color: #fff;
   padding: 1rem 2rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
-header h1 {
-  margin-right: 2rem;
-}
+header h1 { margin-right: 2rem; font-size: 24px; }
 
 nav button {
   margin: 0 5px;
@@ -37,9 +30,7 @@ nav button {
   transition: 0.3s;
 }
 
-nav button.active, nav button:hover {
-  background-color: #ff6600;
-}
+nav button.active, nav button:hover { background-color: #ff6600; }
 
 .cart-icon {
   cursor: pointer;
@@ -58,7 +49,7 @@ nav button.active, nav button:hover {
   font-size: 12px;
 }
 
-/* Products Grid */
+/* PRODUCTS GRID */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -66,7 +57,6 @@ nav button.active, nav button:hover {
   padding: 1rem 2rem;
 }
 
-/* Product Card */
 .product-card {
   background-color: #fff;
   border-radius: 10px;
@@ -77,9 +67,7 @@ nav button.active, nav button:hover {
   transition: transform 0.3s;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-}
+.product-card:hover { transform: translateY(-5px); }
 
 .product-card img {
   width: 100%;
@@ -92,15 +80,8 @@ nav button.active, nav button:hover {
   text-align: center;
 }
 
-.product-info h3 {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.product-info p {
-  font-size: 14px;
-  margin: 5px 0;
-}
+.product-info h3 { font-size: 16px; margin-bottom: 5px; }
+.product-info p { font-size: 14px; margin: 5px 0; }
 
 .add-to-cart {
   margin-top: 10px;
@@ -114,16 +95,14 @@ nav button.active, nav button:hover {
   transition: background-color 0.3s;
 }
 
-.add-to-cart:hover {
-  background-color: #e55a00;
-}
+.add-to-cart:hover { background-color: #e55a00; }
 
-/* Cart Sidebar */
+/* CART SIDEBAR */
 #cart-sidebar {
   position: fixed;
   top: 0;
   right: -320px;
-  width: 300px;
+  width: 320px;
   height: 100%;
   background-color: #fff;
   box-shadow: -3px 0 6px rgba(0,0,0,0.3);
@@ -131,53 +110,89 @@ nav button.active, nav button:hover {
   transition: right 0.3s ease;
   overflow-y: auto;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
 }
 
-#cart-sidebar.active {
-  right: 0;
-}
+#cart-sidebar.active { right: 0; }
 
-#cart-sidebar h2 {
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
   margin-bottom: 1rem;
-  text-align: center;
+}
+
+.cart-header h2 { font-size: 20px; }
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 #cart-items div {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
   font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.cart-total {
-  margin-top: 1rem;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-}
+.cart-total { font-weight: bold; font-size: 16px; margin-top: 10px; text-align: center; }
 
-#cart-sidebar button {
+.checkout-btn {
   margin-top: 1rem;
   width: 100%;
   padding: 0.5rem;
   border: none;
-  background-color: #ff6600;
+  background-color: #28a745;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
+  transition: background 0.3s;
 }
 
-#cart-sidebar button:hover {
-  background-color: #e55a00;
+.checkout-btn:hover { background-color: #218838; }
+
+/* SUCCESS MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-/* Responsive */
-@media(max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    margin-top: 10px;
-  }
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 350px;
+  width: 90%;
+}
+
+.success-icon {
+  font-size: 50px;
+  color: #28a745;
+  margin-bottom: 1rem;
+}
+
+.modal-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
 }
