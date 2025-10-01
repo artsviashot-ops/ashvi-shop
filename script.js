@@ -45,7 +45,7 @@ const products = [
         brand: 'Nike',
         name: 'P-6000',
         price: 85.99,
-        category: 'pants',
+        category: 'shoes',
         image: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/932513c6-894d-4387-a57f-66cf55fce152/NIKE+P-6000+%28GS%29.png'
     },
     {
